@@ -44,3 +44,67 @@ Content-Type: application/json
 ###
 DELETE   http://localhost:3100/api/v1/workers/651b1ffef98aee06b3eeff7e HTTP/1.1
 
+
+###
+POST http://localhost:3100/api/v1/users/new-user HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstname":"Juan",
+    "lastname":"Perez",
+    "addres":{
+        "zip_code":"33232",
+        "city":"Santa marta",
+        "municipality":"Magdalena",
+        "country":"Colombia"
+    },
+    "pets":[
+        "Mia"
+    ],
+    "work":{
+        "id_work":"001",
+        "job":"Frontend",
+        "company":{
+            "id_company":"001",
+            "name_company":"Easynet"
+        }
+    }
+}
+
+
+###
+GET http://localhost:3100/api/v1/users/ HTTP/1.1
+
+###
+GET http://localhost:3100/api/v1/users/651b2c7c1029d9c1173284c0 HTTP/1.1
+
+
+###
+PATCH  http://localhost:3100/api/v1/users/651b2c7c1029d9c1173284c0 HTTP/1.1
+Content-Type: application/json
+
+{
+  "addres": {
+    "zip_code": "33232",
+    "city": "Cali",
+    "municipality": "Valle del cauca",
+    "country": "Colombia"
+  },
+  "work": {
+    "company": {
+      "id_company": "001",
+      "name_company": "Easynet"
+    },
+    "id_work": "001",
+    "job": "Frontend"
+  },
+  "firstname": "Juan",
+  "lastname": "Pepitooo",
+  "pets": [
+    "Mia",
+    "Copito"
+  ]
+}
+
+###
+DELETE http://localhost:3100/api/v1/users/651b2c7c1029d9c1173284c0 HTTP/1.1
