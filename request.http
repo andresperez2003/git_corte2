@@ -1,0 +1,46 @@
+
+###
+POST  http://localhost:3100/api/v1/workers/new-worker HTTP/1.1 
+Content-Type: application/json
+
+{
+    "firstname":"test4",
+    "lastname":"test4",
+    "work":[
+        {
+            "id_work":"3",
+            "name_work":"Frontend"
+        }
+    ],
+    "type_document":"cc",
+    "document_number":"1007"
+}
+
+
+###
+GET  http://localhost:3100/api/v1/workers/ HTTP/1.1
+
+###
+GET  http://localhost:3100/api/v1/workers/651b1ffef98aee06b3eeff7e HTTP/1.1
+
+###
+PATCH   http://localhost:3100/api/v1/workers/651b1ffef98aee06b3eeff7e HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstname":"aaaaaa",
+    "lastname":"aaaaaa",
+    "work":[
+        {
+            "id_work":"7",
+            "name_work":"Backend"
+        }
+    ],
+    "type_document":"cc",
+    "document_number":"1005"
+}
+
+
+###
+DELETE   http://localhost:3100/api/v1/workers/651b1ffef98aee06b3eeff7e HTTP/1.1
+
